@@ -20,28 +20,28 @@
         <form action="<?= URL_BASE; ?>personas/crear" method="post">
             <article id="anombre">
                 <label for="nombre">Usuario:</label>
-                <input type="text" id="nombre" name="nombre" autocomplete="on" required>
+                <input type="text" id="nombre" name="nombre" autocomplete="on" required value="usermaxi">
             </article>
             <article id="aapellido">
                 <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required>
+                <input value="usermaxi" type="text" id="apellido" name="apellido" required>
             </article>
             <article id="acorreo">
                 <label for="correo">Corre Electrónico:</label>
-                <input type="email" id="correo" name="correo" required>
+                <input value="usermaxi@gmail.com" type="email" id="correo" name="correo" required>
             </article>
             <article id="afecha">
                 <label for="fecha">Fecha de Nacimiento:</label>
-                <input type="date" id="fecha" name="fecha" required>
+                <input value="2019-12-21" type="date" id="fecha" name="fecha" required>
             </article>
             <article id="atel">
                 <label for="tel">Teléfono:</label>
-                <input type="tel" id="tel" name="tel" pattern="[0-9]{9}">
+                <input value="099876587" type="tel" id="tel" name="tel" pattern="[0-9]{9}">
             </article>
             <article id="agenero">
                 <label for="genero">Género:</label>
                 <article id="fmotro">
-                    <input type="radio" id="genero" name="genero" value="f" required>
+                    <input checked type="radio" id="genero" name="genero" value="f" required>
                     <i id="femenino" class="fa-solid fa-venus"></i>
                     <input type="radio" id="genero" name="genero" value="m" required>
                     <i id="masculino" class="fa-solid fa-mars"></i>
