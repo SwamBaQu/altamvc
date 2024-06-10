@@ -17,7 +17,7 @@
         <h1> Formulario </h1>
     </header>
     <main>
-        <form action="alta.php" method="post">
+        <form action="<?= URL_BASE; ?>personas/crear" method="post">
             <article id="anombre">
                 <label for="nombre">Usuario:</label>
                 <input type="text" id="nombre" name="nombre" autocomplete="on" required>

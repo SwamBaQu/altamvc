@@ -6,6 +6,8 @@ namespace Empresa\App\Controllers;
 
 use Empresa\App\Core\Controller;
 use Empresa\App\Models\Auto;
+// use Empresa\App\Models\Persona as P;
+
 
 class PersonaController extends Controller
 {
@@ -21,26 +23,46 @@ class PersonaController extends Controller
     }
     public function crear()
     {
-        $mensaje = "";
         try {
             //code...
+            $mensaje = "defecto";
+            $nombre = $_POST['nombre'] ?? '';
+            $apellido = $_POST['apellido'] ?? '';
+            $correo = $_POST['correo'] ?? '';
+            $fecha = $_POST['fecha'] ?? '';
+            $tel = $_POST['tel'] ?? '';
+            $genero = $_POST['genero'] ?? '';
+            $pais = $_POST['pais'] ?? '';
 
-            $marca = $_POST['marca'] ?? '';
-            $modelo = $_POST['modelo'] ?? '';
-            $fechaCompra = $_POST['fechaCompra'] ?? '';
             // Crear instancia de Auto
-            $auto = new Auto($marca, $modelo, $fechaCompra);
+            $persona = new \Empresa\App\Models\Persona(
+                nombre: $nombre,
+                apellido: $apellido,
+                email: $correo,
+                fechaNac: $fecha,
+                numero: $tel,
+                genero: $genero,
+                pais: $pais
+            );
 
             // Insertar en la base de datos
-            if ($auto->insertar()) {
-                $mensaje = "El auto ha sido registrado con éxito.";
+            if ($persona->insertar()) {
+                $mensaje = "La persona ha sido registrada con éxito.";
             } else {
-                $mensaje = "Error al registrar el auto.";
+                $mensaje = "Error al registrar la persona.";
             }
-            $this->render('autos/mensaje', ["mensaje" => $mensaje]);
+            //code...
+
+
+            // Insertar en la base de datos
+
+            $this->render('persona/mensaje', ["mensaje" => $mensaje]);
         } catch (\Throwable $th) {
             //throw $th;
         }
+
+        //throw $th;
+
     }
     public function modificar()
     {
