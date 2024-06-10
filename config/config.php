@@ -1,7 +1,7 @@
 <?php
 // config.php
 
-define('URL_PREFIX', '/prj/mvc/');
+define('URL_PREFIX', '/prj02/mvc/');
 define('URL_BASE_PATH', 'http://' . $_SERVER['HTTP_HOST'] . URL_PREFIX);
 define('URL_BASE', URL_BASE_PATH . 'index.php?r=');
 define('DB_HOST', 'localhost');

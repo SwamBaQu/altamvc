@@ -4,7 +4,7 @@ use Empresa\App\Core\Router;
 
 $router = new Router();
 //pagina principal
-$router->add('', ['controller' => 'Index', 'action' => 'index']);
+$router->add('home', ['controller' => 'Index', 'action' => 'index']);
 $router->add('index.php', ['controller' => 'Index', 'action' => 'index']);
 //$router->add('articulo/listar', ['controller' => 'Articulo', 'action' => 'listar']);
 //http: //localhost/mvccomposer/index.php/auto/nuevo
@@ -15,5 +15,6 @@ $router->add('autos/listar', ['controller' => 'Auto', 'action' => 'listar']);
 $router->add('autos/editar', ['controller' => 'Auto', 'action' => 'editar']);
 $router->add('autos/modificar', ['controller' => 'Auto', 'action' => 'modificar']);
 $router->add('autos/borrar', ['controller' => 'Auto', 'action' => 'borrar']);
-//ruta al controlador
-$router->add('personas/nuevo', ['controller' => 'Auto', 'action' => 'nuevo']);
+//ruta al controlador de personas
+$router->add('personas/nuevo', ['controller' => 'Persona', 'action' => 'nuevo']);
+$router->add('personas/crear', ['controller' => 'Persona', 'action' => 'crear']);
